@@ -1,6 +1,7 @@
 package com.example.appbibliotecaescolar.Modelo
 
 import android.util.Log
+import com.example.appbibliotecaescolar.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -12,7 +13,7 @@ class LoginModel {
 
     fun inicializarApiService() {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://grupoctic.com/giovanni/bibliotecamovil/api/")
+            .baseUrl(Constants.URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

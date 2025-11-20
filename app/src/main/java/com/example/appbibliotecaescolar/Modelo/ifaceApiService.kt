@@ -3,9 +3,14 @@ package com.example.appbibliotecaescolar.Modelo
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ifaceApiService {
+    @GET("apiLibros.php")
+    // Cambia esto según tu API
+    fun obtenerLibros(): Call<List<ClsLibros>>
+
     //Api de inicio de sesion
     @FormUrlEncoded
     @POST("apiLogin.php")

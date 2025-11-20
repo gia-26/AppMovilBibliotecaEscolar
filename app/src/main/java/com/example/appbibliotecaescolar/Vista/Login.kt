@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.appbibliotecaescolar.Inicio
 import com.example.appbibliotecaescolar.Presentador.LoginPresenter
 import com.example.appbibliotecaescolar.R
 
@@ -18,6 +18,7 @@ class Login : AppCompatActivity(), LoginContract {
     lateinit var edtEmail : EditText
     lateinit var edtPass : EditText
     lateinit var btnAcceder : Button
+    lateinit var tvRegistrar : TextView
     var loginPresenter = LoginPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,9 @@ class Login : AppCompatActivity(), LoginContract {
         edtEmail = findViewById(R.id.edtUsuario)
         edtPass = findViewById(R.id.edtPassword)
         btnAcceder = findViewById(R.id.btnIngresar)
+        tvRegistrar = findViewById(R.id.tvRegistrar)
+
+        tvRegistrar.setOnClickListener(this::redirigirRegistro)
 
         //Listener para el botón de Login
         btnAcceder.setOnClickListener(this::iniciarSesion)
@@ -46,12 +50,12 @@ class Login : AppCompatActivity(), LoginContract {
 
     fun redirigirRegistro(v : View)
     {
-        val intent = Intent(this, Inicio::class.java)
+        val intent = Intent(this, Registro::class.java)
         startActivity(intent)
     }
 
     override fun redirigirInicio() {
-        val intent = Intent(this@Login, Inicio::class.java)
+        val intent = Intent(this@Login, Main::class.java)
         startActivity(intent)
         finish()
     }

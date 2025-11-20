@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,7 +16,22 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:usesCleartextTraffic">
         <activity
-            android:name=".Inicio"
+            android:name=".Vista.VistaDetalleLibro"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.VerCatalogo"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.VerPrestamos"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.Registro"
+            android:exported="false" />
+        <activity
+            android:name=".Vista.Main"
             android:exported="false" />
         <activity
             android:name=".Vista.Login"
