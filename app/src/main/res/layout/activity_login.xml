@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#F0D9D9"
     android:backgroundTint="#FFFFFF"
-    tools:context=".Login">
+    tools:context=".Vista.Login">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -51,20 +51,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtTituloLogin" />
 
-            <EditText
-                android:id="@+id/edtPassword"
-                android:layout_width="257dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="64dp"
-                android:ems="10"
-                android:hint="Contraseña"
-                android:inputType="text"
-                android:textColor="#FFD5D5"
-                android:textColorHint="#F6CFCF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtUsuario" />
-
             <androidx.cardview.widget.CardView
                 android:layout_width="173dp"
                 android:layout_height="56dp"
@@ -87,6 +73,20 @@
                     android:textSize="20sp" />
 
             </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="257dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="64dp"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColor="#FFD5D5"
+                android:textColorHint="#F6CFCF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtUsuario" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
