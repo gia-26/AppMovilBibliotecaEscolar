@@ -5,6 +5,183 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0D9D9"
     tools:context=".Vista.Registro">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="624dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="55dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#381D1D">
+
+
+            <TextView
+                android:id="@+id/tvRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="118dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="117dp"
+                android:fontFamily="@font/roboto"
+                android:text="Registro"
+                android:textColor="#F8D7D7"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="303dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="51dp"
+                app:cardBackgroundColor="#F0D9D9"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPassConfirm">
+
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:text="Registrar"
+                    android:textColor="#330E0E"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview2"
+                android:layout_width="302dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="29dp"
+                app:cardBackgroundColor="#F0D9D9"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRegistro">
+
+                <Button
+                    android:id="@+id/btnQR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:text="Escanear QR"
+                    android:textColor="#381D1D"
+                    android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="272dp"
+                android:fontFamily="@font/roboto"
+                android:text="Nombre: "
+                android:textColor="#F0D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardview2" />
+
+            <TextView
+                android:id="@+id/tvApellidoP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="223dp"
+                android:fontFamily="@font/roboto"
+                android:text="Apellido Paterno:"
+                android:textColor="#F0D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+
+            <TextView
+                android:id="@+id/tvApellidoM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="220dp"
+                android:fontFamily="@font/roboto"
+                android:text="Apellido Materno:"
+                android:textColor="#F0D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvApellidoP" />
+
+            <TextView
+                android:id="@+id/tvApellidoM2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="230dp"
+                android:fontFamily="@font/roboto"
+                android:text="Tipo de usuario:"
+                android:textColor="#F0D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvApellidoM" />
+
+            <EditText
+                android:id="@+id/edtPass"
+                android:layout_width="303dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="29dp"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColor="#F0D9D9"
+                android:textColorHint="#F0D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvApellidoM2" />
+
+            <EditText
+                android:id="@+id/edtPassConfirm"
+                android:layout_width="303dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="28dp"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:hint="Confirmar Contraseña"
+                android:inputType="textPassword"
+                android:textColor="#F0D9D9"
+                android:textColorHint="#F0D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPass" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

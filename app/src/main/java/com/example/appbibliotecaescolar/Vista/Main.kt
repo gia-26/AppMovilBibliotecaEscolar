@@ -7,20 +7,33 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appbibliotecaescolar.Modelo.ClsLibros
+import com.example.appbibliotecaescolar.Modelo.ClsPrestamos
 import com.example.appbibliotecaescolar.Modelo.LibrosAdaptador
+import com.example.appbibliotecaescolar.Modelo.PrestamosAdaptador
 import com.example.appbibliotecaescolar.Presentador.LibrosPresenter
+import com.example.appbibliotecaescolar.Presentador.PrestamosPresenter
 import com.example.appbibliotecaescolar.R
+import com.example.appbibliotecaescolar.Vista.Contracts.LibrosContract
+import com.example.appbibliotecaescolar.Vista.Contracts.PrestamosContract
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.ui.PlayerView
+import com.google.android.exoplayer2.ui.StyledPlayerView
 
 class Main : AppCompatActivity() {
     private lateinit var contenedor : FrameLayout
     private lateinit var btnInicio : Button
     private lateinit var btnCatalogo : Button
     private lateinit var btnPrestamos : Button
+    private lateinit var exoPlayer: ExoPlayer
+    private lateinit var playerView: StyledPlayerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -44,17 +57,56 @@ class Main : AppCompatActivity() {
     fun mostrarInicio(v : View)
     {
         contenedor.removeAllViews()
-        val pantalla = layoutInflater.inflate(R.layout.activity_inicio, contenedor, false)
-        contenedor.addView(pantalla)
+
+        val inicioView = layoutInflater.inflate(R.layout.activity_inicio, contenedor, false)
+
+        playerView = inicioView.findViewById(R.id.playerView)
+
+        reproducir(playerView)
+
+        contenedor.addView(inicioView)
+    }
+
+    fun reproducir(v : View)
+    {
+        exoPlayer = ExoPlayer.Builder(this).build()
+        playerView.player = exoPlayer
+        playerView.useController = true
+
+        //Construye la URI del video
+        val videoUri = ("android.resource://" + packageName + "/" + R.raw.video_bioetica).toUri()
+        val mediaItem = MediaItem.fromUri(videoUri)
+
+        //Configura el video en el reproductor
+        exoPlayer.setMediaItem(mediaItem)
+
+        //Prepara y reproduce el video
+        exoPlayer.prepare()
+        exoPlayer.playWhenReady = true
+    }
+
+    override fun onPause()
+    {
+        super.onPause()
+        exoPlayer.pause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        exoPlayer.release()
+    }
+
+    override fun onBackPressed()
+    {
+        super.onBackPressed()
+        exoPlayer.release()
     }
     fun mostrarCatalogo(v : View)
     {
         contenedor.removeAllViews()
 
-        // Inflar solo el contenido del RecyclerView
         val catalogoView = layoutInflater.inflate(R.layout.activity_ver_catalogo, contenedor, false)
 
-        // Configurar RecyclerView manualmente
         val rcvLista = catalogoView.findViewById<RecyclerView>(R.id.rcvLista)
         rcvLista.layoutManager = LinearLayoutManager(this)
 
@@ -83,7 +135,33 @@ class Main : AppCompatActivity() {
     fun mostrarPrestamos(v : View)
     {
         contenedor.removeAllViews()
-        val pantalla = layoutInflater.inflate(R.layout.activity_ver_prestamos, contenedor, false)
-        contenedor.addView(pantalla)
+        //val prestamosView = layoutInflater.inflate(R.layout.activity_ver_prestamos, contenedor, false)
+
+        val catalogoView = layoutInflater.inflate(R.layout.activity_ver_catalogo, contenedor, false)
+
+        val rcvLista = catalogoView.findViewById<RecyclerView>(R.id.rcvLista)
+        rcvLista.layoutManager = LinearLayoutManager(this)
+
+        val adaptador = PrestamosAdaptador(this, mutableListOf())
+        rcvLista.adapter = adaptador
+
+        // Cargar datos
+        val prestamosPresenter = PrestamosPresenter(object : PrestamosContract {
+            override fun mostrarPrestamos(prestamos: List<ClsPrestamos>) {
+                runOnUiThread {
+                    val adaptador = PrestamosAdaptador(this@Main, prestamos)
+                    rcvLista.adapter = adaptador
+                }
+            }
+
+            override fun mostrarMensaje(mensaje: String) {
+                runOnUiThread {
+                    Toast.makeText(this@Main, mensaje, Toast.LENGTH_LONG).show()
+                }
+            }
+        })
+        prestamosPresenter.recuperarPrestamos()
+
+        contenedor.addView(catalogoView)
     }
 }

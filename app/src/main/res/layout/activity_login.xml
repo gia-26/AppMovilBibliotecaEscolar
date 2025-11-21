@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0D9D9"
-    android:backgroundTint="#FFFFFF"
     tools:context=".Vista.Login">
 
     <androidx.cardview.widget.CardView
@@ -29,9 +28,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="112dp"
-                android:text="Inicio de sesión"
+                android:fontFamily="@font/roboto"
+                android:text="Iniciar sesión"
                 android:textColor="#F8D7D7"
-                android:textSize="24sp"
+                android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +42,7 @@
                 android:layout_width="214dp"
                 android:layout_height="31dp"
                 android:clickable="true"
+                android:fontFamily="@font/roboto"
                 android:text="Registrarse"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -69,8 +70,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
-                android:layout_width="173dp"
-                android:layout_height="56dp"
+                android:layout_width="319dp"
+                android:layout_height="62dp"
                 android:layout_marginTop="64dp"
                 android:layout_marginBottom="112dp"
                 app:cardBackgroundColor="#F0D9D9"
