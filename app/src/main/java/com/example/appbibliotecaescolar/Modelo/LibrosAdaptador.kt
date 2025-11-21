@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.appbibliotecaescolar.Constants
 import com.example.appbibliotecaescolar.R
 import com.example.appbibliotecaescolar.Vista.VistaDetalleLibro
 
@@ -33,7 +34,7 @@ class LibrosAdaptador (val contexto : Context, val listaLibros : List<ClsLibros>
 
         //Cargar la imagen usando Glide
         Glide.with(contexto)
-            .load("https://biblioteca.grupoctic.com/libros_img/" + libro.imagen) //Usar la URL de la imagen
+            .load(Constants.URL_IMAGEN + libro.imagen) //Usar la URL de la imagen holaaaa
             .into(holder.imgLibro)
         holder.imgLibro.setOnClickListener {
             verDetalle(libro)
