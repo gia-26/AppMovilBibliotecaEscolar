@@ -7,6 +7,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ifaceApiService {
+    @GET("apiPrestamos.php")
+    fun obtenerPrestamos() : Call<List<ClsPrestamos>>
+
     @GET("apiLibros.php")
     // Cambia esto según tu API
     fun obtenerLibros(): Call<List<ClsLibros>>

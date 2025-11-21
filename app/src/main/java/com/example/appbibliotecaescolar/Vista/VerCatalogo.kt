@@ -12,6 +12,7 @@ import com.example.appbibliotecaescolar.Modelo.ClsLibros
 import com.example.appbibliotecaescolar.Modelo.LibrosAdaptador
 import com.example.appbibliotecaescolar.Presentador.LibrosPresenter
 import com.example.appbibliotecaescolar.R
+import com.example.appbibliotecaescolar.Vista.Contracts.LibrosContract
 
 class VerCatalogo : AppCompatActivity(), LibrosContract {
     /*private lateinit var rcvLista : RecyclerView
