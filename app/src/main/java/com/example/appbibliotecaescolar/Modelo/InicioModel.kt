@@ -1,6 +1,7 @@
 package com.example.appbibliotecaescolar.Modelo
 
 import com.example.appbibliotecaescolar.Constants
+import com.example.appbibliotecaescolar.Modelo.DataClass.ClsInfoBiblioteca
 import com.example.appbibliotecaescolar.Modelo.DataClass.ClsLibros
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -9,7 +10,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class LibrosModel {
+class InicioModel {
     private lateinit var apiService: ifaceApiService
 
     fun inicializarApiService() {
@@ -23,16 +24,16 @@ class LibrosModel {
         apiService = retrofit.create(ifaceApiService::class.java)
     }
 
-    fun obtenerLibros(callback: (Boolean, String, List<ClsLibros>) -> Unit)
+    fun obtenerInfo(callback: (Boolean, String, List<ClsInfoBiblioteca>) -> Unit)
     {
-        apiService.obtenerLibros().enqueue(object: Callback<List<ClsLibros>>
+        apiService.obtenerInfoBiblioteca().enqueue(object: Callback<List<ClsInfoBiblioteca>>
         {
-            override fun onResponse(call: Call<List<ClsLibros>>, response: Response<List<ClsLibros>>)
+            override fun onResponse(call: Call<List<ClsInfoBiblioteca>>, response: Response<List<ClsInfoBiblioteca>>)
             {
                 if (response.isSuccessful)
                 {
-                    response.body()?.let { libros ->
-                        callback(true, "Libros recuperados correctamente", libros)
+                    response.body()?.let { info ->
+                        callback(true, "Información recuperada correctamente", info)
                     }
                 }
                 else
@@ -41,7 +42,7 @@ class LibrosModel {
                 }
             }
 
-            override fun onFailure(call: Call<List<ClsLibros>?>, t: Throwable) {
+            override fun onFailure(call: Call<List<ClsInfoBiblioteca>?>, t: Throwable) {
                 callback(true, "Error: ${t.message}", emptyList())
             }
         })

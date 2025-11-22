@@ -1,4 +1,4 @@
-package com.example.appbibliotecaescolar.Modelo
+package com.example.appbibliotecaescolar.Modelo.Adapters
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appbibliotecaescolar.Constants
+import com.example.appbibliotecaescolar.Modelo.DataClass.ClsLibros
 import com.example.appbibliotecaescolar.R
 import com.example.appbibliotecaescolar.Vista.VistaDetalleLibro
 
@@ -55,6 +56,7 @@ class LibrosAdaptador (val contexto : Context, val listaLibros : List<ClsLibros>
             putExtra("lib_noEstante", libro.noEstante)
             putExtra("lib_edicion", libro.edicion)
             putExtra("lib_sinopsis", libro.sinopsis)
+            putExtra("lib_estado", libro.estado)
             putExtra("lib_img", libro.imagen)
         }
         contexto.startActivity(intent)

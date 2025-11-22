@@ -1,6 +1,6 @@
 package com.example.appbibliotecaescolar.Vista.Contracts
 
-import com.example.appbibliotecaescolar.Modelo.ClsPrestamos
+import com.example.appbibliotecaescolar.Modelo.DataClass.ClsPrestamos
 
 interface PrestamosContract {
     fun mostrarPrestamos(prestamos : List<ClsPrestamos>)
