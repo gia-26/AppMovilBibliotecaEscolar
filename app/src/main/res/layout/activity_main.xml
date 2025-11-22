@@ -14,12 +14,10 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="53dp">
 
-        <!-- Encabezado fijo -->
         <include
             android:id="@+id/header"
             layout="@layout/header_layout" />
 
-        <!-- Contenedor para las pantallas/páginas -->
         <FrameLayout
             android:id="@+id/contenedor"
             android:layout_width="match_parent"

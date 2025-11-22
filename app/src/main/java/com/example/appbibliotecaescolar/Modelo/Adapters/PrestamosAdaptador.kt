@@ -1,4 +1,4 @@
-package com.example.appbibliotecaescolar.Modelo
+package com.example.appbibliotecaescolar.Modelo.Adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.appbibliotecaescolar.Constants
+import com.example.appbibliotecaescolar.Modelo.DataClass.ClsPrestamos
 import com.example.appbibliotecaescolar.R
 
 class PrestamosAdaptador (val contexto : Context, val listaPrestamos : List<ClsPrestamos>) : RecyclerView.Adapter<PrestamosAdaptador.PrestamoViewHolder>() {

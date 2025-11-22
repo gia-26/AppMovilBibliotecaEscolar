@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">appbibliotecaescolar</string>
+    <string name="txtRegistrarse"><u>Registrarse</u></string>
 </resources>

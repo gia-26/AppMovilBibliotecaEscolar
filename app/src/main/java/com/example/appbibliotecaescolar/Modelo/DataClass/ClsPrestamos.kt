@@ -1,4 +1,4 @@
-package com.example.appbibliotecaescolar.Modelo
+package com.example.appbibliotecaescolar.Modelo.DataClass
 
 data class ClsPrestamos(
     val tituloLibro: String,

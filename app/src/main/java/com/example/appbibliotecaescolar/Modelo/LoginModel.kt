@@ -2,6 +2,7 @@ package com.example.appbibliotecaescolar.Modelo
 
 import android.util.Log
 import com.example.appbibliotecaescolar.Constants
+import com.example.appbibliotecaescolar.Modelo.DataClass.ClsDatosRespuesta
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
