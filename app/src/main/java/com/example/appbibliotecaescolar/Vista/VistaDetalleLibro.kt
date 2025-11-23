@@ -22,7 +22,7 @@ class VistaDetalleLibro : AppCompatActivity() {
     private lateinit var tvAnioEdiVD : TextView
     private lateinit var tvNoEstanteVD : TextView
     private lateinit var tvEdicionVD : TextView
-    private lateinit var tvSinopsisVD : TextView
+    private lateinit var tvSinopsis : TextView
     private lateinit var tvEstadoVD : TextView
     private lateinit var imgLibroVD : ImageView
     private lateinit var btnCerrar : Button
@@ -44,7 +44,7 @@ class VistaDetalleLibro : AppCompatActivity() {
         tvAnioEdiVD = findViewById(R.id.tvAnioEdiVD)
         tvNoEstanteVD = findViewById(R.id.tvNoEstanteVD)
         tvEdicionVD = findViewById(R.id.tvEdicionVD)
-        tvSinopsisVD = findViewById(R.id.tvSinopsisVD)
+        tvSinopsis = findViewById(R.id.tvSinopsis)
         tvEstadoVD = findViewById(R.id.tvEstadoVD)
         imgLibroVD = findViewById(R.id.imgLibroVD)
         btnCerrar = findViewById(R.id.btnCerrar)
@@ -76,7 +76,7 @@ class VistaDetalleLibro : AppCompatActivity() {
         tvAnioEdiVD.text = Html.fromHtml("<b>Año de edición:</b> $libAnioEdicion", Html.FROM_HTML_MODE_LEGACY)
         tvNoEstanteVD.text = Html.fromHtml("<b>No. de estante:</b> $libNoEstante", Html.FROM_HTML_MODE_LEGACY)
         tvEdicionVD.text = Html.fromHtml("<b>Edición:</b> $libEdicion", Html.FROM_HTML_MODE_LEGACY)
-        tvSinopsisVD.text = Html.fromHtml("<b>Sinopsis:</b><br>$libSinopsis", Html.FROM_HTML_MODE_LEGACY)
+        tvSinopsis.text = Html.fromHtml("<b>Sinopsis:</b><br>$libSinopsis", Html.FROM_HTML_MODE_LEGACY)
         tvEstadoVD.text = libEstado
 
         btnCerrar.setOnClickListener {
