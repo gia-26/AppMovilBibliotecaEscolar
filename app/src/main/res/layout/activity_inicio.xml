@@ -30,16 +30,17 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="100dp"
+        android:layout_width="124dp"
         android:layout_height="26dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="276dp"
         android:text="Ubicación"
         android:textColor="#3B2423"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMision" />
 
@@ -153,4 +154,14 @@
         app:layout_constraintVertical_bias="0.947"
         app:resize_mode="fit"
         tools:ignore="MissingClass" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="26dp"
+        android:src="@drawable/location"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
 </androidx.constraintlayout.widget.ConstraintLayout>
