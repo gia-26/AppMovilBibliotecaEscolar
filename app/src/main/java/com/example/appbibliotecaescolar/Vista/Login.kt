@@ -55,8 +55,10 @@ class Login : AppCompatActivity(), LoginContract {
         startActivity(intent)
     }
 
-    override fun redirigirInicio() {
-        val intent = Intent(this@Login, Main::class.java)
+    override fun redirigirInicio(idUsuario : String) {
+        val intent = Intent(this@Login, Main::class.java).apply {
+            putExtra("idUsuario", idUsuario)
+        }
         startActivity(intent)
         finish()
     }

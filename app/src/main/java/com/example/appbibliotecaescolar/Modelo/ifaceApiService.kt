@@ -14,8 +14,11 @@ import retrofit2.http.POST
 interface ifaceApiService {
     @GET("apiInfoBiblioteca.php")
     fun obtenerInfoBiblioteca() : Call<List<ClsInfoBiblioteca>>
-    @GET("apiPrestamos.php")
-    fun obtenerPrestamos() : Call<List<ClsPrestamos>>
+    @FormUrlEncoded
+    @POST("apiPrestamos.php")
+    fun obtenerPrestamos(
+        @Field("idUsuario") idUsuario: String
+    ) : Call<List<ClsPrestamos>>
 
     @GET("apiLibros.php")
     fun obtenerLibros(): Call<List<ClsLibros>>

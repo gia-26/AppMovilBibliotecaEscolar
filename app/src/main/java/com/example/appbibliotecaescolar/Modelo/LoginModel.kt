@@ -21,7 +21,7 @@ class LoginModel {
         apiService = retrofit.create(ifaceApiService::class.java)
     }
 
-    fun acceder(email: String, password: String, callback: (Boolean, String) -> Unit) {
+    fun acceder(email: String, password: String, callback: (Boolean, String, String) -> Unit) {
         apiService.iniciarSesion(action = "login", email = email, password = password)
             .enqueue(object : Callback<List<ClsDatosRespuesta>> {
                 override fun onResponse(
@@ -31,20 +31,20 @@ class LoginModel {
                     if (response.isSuccessful) {
                         val datos = response.body()
                         if (!datos.isNullOrEmpty() && datos[0].Estado == "Correcto") {
-                            callback(true, "Inicio de sesión correcto")
+                            callback(true, "Inicio de sesión correcto", datos[0].user_id)
                         } else {
-                            callback(false, "No se encontraron datos del usuario.")
+                            callback(false, "No se encontraron datos del usuario.", "")
                         }
                     } else {
                         val errorBody = response.errorBody()?.string()
                         Log.d("API_RESULT", "Respuesta: ${response.body()}")
-                        callback(false, "Error en la respuesta del servidor: $errorBody")
+                        callback(false, "Error en la respuesta del servidor: $errorBody", "")
                     }
                 }
 
                 override fun onFailure(call: Call<List<ClsDatosRespuesta>>, t: Throwable) {
                     Log.e("API_FAIL", "Error: ${t.message}")
-                    callback(false, "Error en la conexión: ${t.message}")
+                    callback(false, "Error en la conexión: ${t.message}", "")
                 }
             })
     }

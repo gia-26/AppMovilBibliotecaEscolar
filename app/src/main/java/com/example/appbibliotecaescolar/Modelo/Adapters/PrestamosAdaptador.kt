@@ -1,6 +1,7 @@
 package com.example.appbibliotecaescolar.Modelo.Adapters
 
 import android.content.Context
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +28,10 @@ class PrestamosAdaptador (val contexto : Context, val listaPrestamos : List<ClsP
         //Se van a extraer los datos de las listas y los colocamos en cada control de layout
         val prestamo = listaPrestamos[position]
         holder.tvTitLibP.text = prestamo.tituloLibro
-        holder.tvAutorP.text = prestamo.autor
-        holder.tvFechaPres.text = prestamo.fechaPrestamo
-        holder.tvFechaDev.text = prestamo.fechaDevolucion
-        holder.tvEstadoP.text = prestamo.estado
+        holder.tvAutorP.text = Html.fromHtml("<b>Autor:</b> ${prestamo.autor}", Html.FROM_HTML_MODE_LEGACY)
+        holder.tvFechaPres.text = Html.fromHtml("<b>Fecha de préstamo:</b> ${prestamo.fechaPrestamo}", Html.FROM_HTML_MODE_LEGACY)
+        holder.tvFechaDev.text = Html.fromHtml("<b>Fecha de devolución:</b> ${prestamo.fechaDevolucion}", Html.FROM_HTML_MODE_LEGACY)
+        holder.tvEstadoP.text = Html.fromHtml("<b>Estado:</b> ${prestamo.estado}", Html.FROM_HTML_MODE_LEGACY)
 
 
         //Cargar la imagen usando Glide
@@ -47,7 +48,7 @@ class PrestamosAdaptador (val contexto : Context, val listaPrestamos : List<ClsP
     {
         //Controles del layout de cada préstamo
         val tvTitLibP : TextView = itemView.findViewById(R.id.tvTitLibP)
-        val tvAutorP : TextView = itemView.findViewById(R.id.tvAutor)
+        val tvAutorP : TextView = itemView.findViewById(R.id.tvAutorP)
         val tvFechaPres : TextView = itemView.findViewById(R.id.tvFechaPres)
         val tvFechaDev : TextView = itemView.findViewById(R.id.tvFechaDev)
         val tvEstadoP : TextView = itemView.findViewById(R.id.tvEstadoP)
