@@ -1,7 +1,7 @@
 package com.example.appbibliotecaescolar.Presentador
 
 import com.example.appbibliotecaescolar.Modelo.LibrosModel
-import com.example.appbibliotecaescolar.Vista.LibrosContract
+import com.example.appbibliotecaescolar.Vista.Contracts.LibrosContract
 
 class LibrosPresenter (val vista : LibrosContract) {
     val modelo = LibrosModel()

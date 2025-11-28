@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0D9D9"
-    android:backgroundTint="#FFFFFF"
+    android:background="#E6D7C8"
     tools:context=".Vista.Login">
 
     <androidx.cardview.widget.CardView
@@ -28,23 +27,26 @@
                 android:id="@+id/txtTituloLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="112dp"
-                android:text="Inicio de sesión"
-                android:textColor="#F8D7D7"
-                android:textSize="24sp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto"
+                android:text="Iniciar sesión"
+                android:textColor="#E6D7C8"
+                android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
             <TextView
                 android:id="@+id/tvRegistrar"
                 android:layout_width="214dp"
                 android:layout_height="31dp"
                 android:clickable="true"
-                android:text="Registrarse"
+                android:fontFamily="@font/roboto"
+                android:text="@string/txtRegistrarse"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="#E6D7C8"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,23 +59,23 @@
                 android:id="@+id/edtUsuario"
                 android:layout_width="257dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="13dp"
                 android:ems="10"
-                android:hint="Usuario"
+                android:hint="correo@uthh.edu.mx"
                 android:inputType="text"
-                android:textColor="#FFD5D5"
-                android:textColorHint="#F6CFCF"
+                android:textColor="#E6D7C8"
+                android:textColorHint="#E6D7C8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTituloLogin" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
-                android:layout_width="173dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="64dp"
+                android:layout_width="319dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginBottom="112dp"
-                app:cardBackgroundColor="#F0D9D9"
+                app:cardBackgroundColor="#E6D7C8"
                 app:cardCornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +89,12 @@
                     android:background="#00FFFFFF"
                     android:text="Ingresar"
                     android:textColor="#330E0E"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    app:icon="@drawable/acceso_2"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconSize="22dp"
+                    app:iconTint="#381D1D" />
 
             </androidx.cardview.widget.CardView>
 
@@ -95,15 +102,78 @@
                 android:id="@+id/edtPassword"
                 android:layout_width="257dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="15dp"
                 android:ems="10"
-                android:hint="Contraseña"
+                android:hint="********"
                 android:inputType="textPassword"
-                android:textColor="#FFD5D5"
-                android:textColorHint="#F6CFCF"
+                android:textColor="#E6D7C8"
+                android:textColorHint="#E6D7C8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="192dp"
+                android:text="Introduce tu correo"
+                android:textColor="#E6D7C8"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTituloLogin" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="61dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="179dp"
+                android:text="Ingresa tu contraseña"
+                android:textColor="#E6D7C8"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtUsuario" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="24dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/edtUsuario"
+                app:layout_constraintHorizontal_bias="0.956"
+                app:layout_constraintStart_toStartOf="@+id/edtUsuario"
+                app:layout_constraintTop_toTopOf="@+id/edtUsuario"
+                app:srcCompat="@drawable/email" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="76dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="155dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="156dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/outline_book_ribbon_24" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/edtPassword"
+                app:layout_constraintHorizontal_bias="0.961"
+                app:layout_constraintStart_toStartOf="@+id/edtPassword"
+                app:layout_constraintTop_toTopOf="@+id/edtPassword"
+                app:srcCompat="@drawable/ojo_password" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

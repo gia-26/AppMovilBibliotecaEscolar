@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.appbibliotecaescolar.Presentador.LoginPresenter
 import com.example.appbibliotecaescolar.R
+import com.example.appbibliotecaescolar.Vista.Contracts.LoginContract
 
 class Login : AppCompatActivity(), LoginContract {
     lateinit var edtEmail : EditText

@@ -1,7 +1,7 @@
 package com.example.appbibliotecaescolar.Presentador
 
 import com.example.appbibliotecaescolar.Modelo.LoginModel
-import com.example.appbibliotecaescolar.Vista.LoginContract
+import com.example.appbibliotecaescolar.Vista.Contracts.LoginContract
 
 class LoginPresenter (val vista : LoginContract) {
     var modelo = LoginModel()

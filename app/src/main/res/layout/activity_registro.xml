@@ -5,6 +5,238 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6D7C8"
     tools:context=".Vista.Registro">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360dp"
+        android:layout_height="624dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="55dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#381D1D">
+
+            <TextView
+                android:id="@+id/tvRegistro"
+                android:layout_width="170dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/roboto"
+                android:text="Registro"
+                android:textColor="#E6D7C8"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="303dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="28dp"
+                android:layout_marginBottom="51dp"
+                app:cardBackgroundColor="#E6D7C8"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPassConfirm">
+
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:text="Registrar"
+                    android:textColor="#330E0E"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview2"
+                android:layout_width="302dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="29dp"
+                app:cardBackgroundColor="#E6D7C8"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvRegistro">
+
+                <Button
+                    android:id="@+id/btnQR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FFFFFF"
+                    android:text="Escanear QR"
+                    android:textColor="#381D1D"
+                    android:textSize="20sp"
+                    app:icon="@drawable/qr_code"
+                    app:iconGravity="textEnd"
+                    app:iconPadding="8dp"
+                    app:iconSize="28dp"
+                    app:iconTint="#381D1D" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- TEXTO NOMBRE CORREGIDO -->
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="31dp"
+                android:fontFamily="@font/roboto"
+                android:text="Nombre: "
+                android:textColor="#E6D7C8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardview2" />
+
+            <!-- TEXTO APELLIDO PATERNO CORREGIDO -->
+            <TextView
+                android:id="@+id/tvApellidoP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/roboto"
+                android:text="Apellido Paterno:"
+                android:textColor="#E6D7C8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+
+            <!-- TEXTO APELLIDO MATERNO CORREGIDO -->
+            <TextView
+                android:id="@+id/tvApellidoM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/roboto"
+                android:text="Apellido Materno:"
+                android:textColor="#E6D7C8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvApellidoP" />
+
+            <EditText
+                android:id="@+id/edtPass"
+                android:layout_width="303dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="29dp"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textColor="#E6D7C8"
+                android:textColorHint="#E6D7C8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvApellidoM" />
+
+            <EditText
+                android:id="@+id/edtPassConfirm"
+                android:layout_width="303dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="28dp"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:hint="Confirmar Contraseña"
+                android:inputType="textPassword"
+                android:textColor="#E6D7C8"
+                android:textColorHint="#E6D7C8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPass" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="16dp"
+                android:layout_height="19dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvNombre"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tvNombre"
+                app:layout_constraintTop_toTopOf="@+id/tvNombre"
+                app:srcCompat="@drawable/person" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="17dp"
+                android:layout_height="19dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvApellidoP"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tvApellidoP"
+                app:layout_constraintTop_toTopOf="@+id/tvApellidoP"
+                app:srcCompat="@drawable/person" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="17dp"
+                android:layout_height="19dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvApellidoM"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tvApellidoM"
+                app:layout_constraintTop_toTopOf="@+id/tvApellidoM"
+                app:srcCompat="@drawable/person" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="20dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/edtPass"
+                app:layout_constraintHorizontal_bias="0.964"
+                app:layout_constraintStart_toStartOf="@+id/edtPass"
+                app:layout_constraintTop_toTopOf="@+id/edtPass"
+                app:srcCompat="@drawable/ojo_password" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="20dp"
+                android:layout_height="22dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/edtPassConfirm"
+                app:layout_constraintHorizontal_bias="0.961"
+                app:layout_constraintStart_toStartOf="@+id/edtPassConfirm"
+                app:layout_constraintTop_toTopOf="@+id/edtPassConfirm"
+                app:srcCompat="@drawable/ojo_password" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="34dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvRegistro"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tvRegistro"
+                app:layout_constraintTop_toTopOf="@+id/tvRegistro"
+                app:srcCompat="@drawable/person_add" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

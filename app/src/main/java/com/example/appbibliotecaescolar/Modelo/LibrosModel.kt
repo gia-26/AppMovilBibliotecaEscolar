@@ -1,6 +1,7 @@
 package com.example.appbibliotecaescolar.Modelo
 
 import com.example.appbibliotecaescolar.Constants
+import com.example.appbibliotecaescolar.Modelo.DataClass.ClsLibros
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
