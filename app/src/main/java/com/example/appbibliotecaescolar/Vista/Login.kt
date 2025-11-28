@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.appbibliotecaescolar.Presentador.LoginPresenter
 import com.example.appbibliotecaescolar.R
+import com.example.appbibliotecaescolar.Test
 import com.example.appbibliotecaescolar.Vista.Contracts.LoginContract
 
 class Login : AppCompatActivity(), LoginContract {
@@ -40,6 +41,11 @@ class Login : AppCompatActivity(), LoginContract {
 
         //Listener para el botón de Login
         btnAcceder.setOnClickListener(this::iniciarSesion)
+
+        val test = Test
+        test.obtenerPrestamos()
+        test.obtenerLibros()
+        test.buscarUsuario("ALUM001")
     }
 
     fun iniciarSesion(v : View)
