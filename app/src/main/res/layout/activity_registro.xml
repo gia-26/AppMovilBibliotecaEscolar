@@ -28,8 +28,8 @@
 
             <TextView
                 android:id="@+id/tvRegistro"
-                android:layout_width="170dp"
-                android:layout_height="43dp"
+                android:layout_width="181dp"
+                android:layout_height="47dp"
                 android:layout_marginTop="28dp"
                 android:fontFamily="@font/roboto"
                 android:text="Registro"
@@ -97,8 +97,8 @@
             <!-- TEXTO NOMBRE CORREGIDO -->
             <TextView
                 android:id="@+id/tvNombre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="302dp"
+                android:layout_height="22dp"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="29dp"
                 android:layout_marginEnd="31dp"
@@ -112,8 +112,8 @@
             <!-- TEXTO APELLIDO PATERNO CORREGIDO -->
             <TextView
                 android:id="@+id/tvApellidoP"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="300dp"
+                android:layout_height="21dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="30dp"
@@ -127,8 +127,8 @@
             <!-- TEXTO APELLIDO MATERNO CORREGIDO -->
             <TextView
                 android:id="@+id/tvApellidoM"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="302dp"
+                android:layout_height="21dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="30dp"
@@ -142,7 +142,7 @@
             <EditText
                 android:id="@+id/edtPass"
                 android:layout_width="303dp"
-                android:layout_height="44dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="31dp"
                 android:layout_marginEnd="29dp"
@@ -158,8 +158,8 @@
 
             <EditText
                 android:id="@+id/edtPassConfirm"
-                android:layout_width="303dp"
-                android:layout_height="44dp"
+                android:layout_width="306dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="29dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="28dp"
@@ -230,9 +230,9 @@
                 android:id="@+id/imageView4"
                 android:layout_width="34dp"
                 android:layout_height="37dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="@+id/tvRegistro"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.945"
                 app:layout_constraintStart_toStartOf="@+id/tvRegistro"
                 app:layout_constraintTop_toTopOf="@+id/tvRegistro"
                 app:srcCompat="@drawable/person_add" />

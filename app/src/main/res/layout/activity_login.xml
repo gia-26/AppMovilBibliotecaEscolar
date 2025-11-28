@@ -25,8 +25,8 @@
 
             <TextView
                 android:id="@+id/txtTituloLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="203dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto"
                 android:text="Iniciar sesión"
@@ -40,8 +40,8 @@
 
             <TextView
                 android:id="@+id/tvRegistrar"
-                android:layout_width="214dp"
-                android:layout_height="31dp"
+                android:layout_width="204dp"
+                android:layout_height="37dp"
                 android:clickable="true"
                 android:fontFamily="@font/roboto"
                 android:text="@string/txtRegistrarse"
@@ -50,10 +50,10 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
-                app:layout_constraintVertical_bias="0.138" />
+                app:layout_constraintVertical_bias="0.171" />
 
             <EditText
                 android:id="@+id/edtUsuario"
@@ -114,8 +114,8 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="126dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="192dp"
                 android:text="Introduce tu correo"
@@ -126,8 +126,8 @@
 
             <TextView
                 android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="146dp"
+                android:layout_height="32dp"
                 android:layout_marginStart="61dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="179dp"
