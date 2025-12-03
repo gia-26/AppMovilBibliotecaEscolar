@@ -9,11 +9,11 @@ class LoginPresenter (val vista : LoginContract) {
     fun acceder(email : String, password : String)
     {
         modelo.inicializarApiService()
-        modelo.acceder(email, password){ exito, mensaje ->
+        modelo.acceder(email, password){ exito, mensaje, idUsuario ->
             if (exito)
             {
                 vista.mostrarMensaje(mensaje)
-                vista.redirigirInicio()
+                vista.redirigirInicio(idUsuario)
             }
             else
             {

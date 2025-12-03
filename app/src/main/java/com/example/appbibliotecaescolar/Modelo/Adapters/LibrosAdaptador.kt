@@ -2,6 +2,7 @@ package com.example.appbibliotecaescolar.Modelo.Adapters
 
 import android.content.Context
 import android.content.Intent
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,8 +31,8 @@ class LibrosAdaptador (val contexto : Context, val listaLibros : List<ClsLibros>
         //Se van a extraer los datos de las listas y los colocamos en cada control de layout
         val libro = listaLibros[position]
         holder.tvTituloLibro.text = libro.titulo
-        holder.tvAutor.text = libro.autor
-        holder.tvSinopsis.text = libro.sinopsis
+        holder.tvAutor.text = "Autor: " + libro.autor
+        holder.tvSinopsis.text = Html.fromHtml("Sinopsis: <br>${libro.sinopsis}", Html.FROM_HTML_MODE_LEGACY)
 
         //Cargar la imagen usando Glide
         Glide.with(contexto)

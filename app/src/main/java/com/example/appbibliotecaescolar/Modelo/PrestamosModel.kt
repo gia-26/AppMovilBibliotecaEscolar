@@ -23,9 +23,9 @@ class PrestamosModel {
         apiService = retrofit.create(ifaceApiService::class.java)
     }
 
-    fun obtenerPrestamos(callback: (Boolean, String, List<ClsPrestamos>) -> Unit)
+    fun obtenerPrestamos(idUsuario: String, callback: (Boolean, String, List<ClsPrestamos>) -> Unit)
     {
-        apiService.obtenerPrestamos().enqueue(object: Callback<List<ClsPrestamos>>
+        apiService.obtenerPrestamos(idUsuario).enqueue(object: Callback<List<ClsPrestamos>>
         {
             override fun onResponse(call: Call<List<ClsPrestamos>>, response: Response<List<ClsPrestamos>>)
             {

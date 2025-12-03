@@ -33,7 +33,6 @@ class LoginInstrumentedTest {
 
         onView(withId(R.id.btnIngresar)).perform(click())
 
-
         Thread.sleep(2000)
     }
 

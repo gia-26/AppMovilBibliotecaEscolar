@@ -6,10 +6,10 @@ import com.example.appbibliotecaescolar.Vista.Contracts.PrestamosContract
 class PrestamosPresenter (val vista : PrestamosContract) {
     val modelo = PrestamosModel()
 
-    fun recuperarPrestamos()
+    fun recuperarPrestamos(idUsuario : String)
     {
         modelo.inicializarApiService()
-        modelo.obtenerPrestamos { exito, mensaje, prestamos ->
+        modelo.obtenerPrestamos(idUsuario) { exito, mensaje, prestamos ->
             if (exito){
                 vista.mostrarMensaje(mensaje)
                 vista.mostrarPrestamos(prestamos)

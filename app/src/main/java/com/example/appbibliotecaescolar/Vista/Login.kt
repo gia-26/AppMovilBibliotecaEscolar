@@ -43,9 +43,9 @@ class Login : AppCompatActivity(), LoginContract {
         btnAcceder.setOnClickListener(this::iniciarSesion)
 
         val test = Test
-        test.obtenerPrestamos()
+        test.obtenerPrestamos("ALU001")
         test.obtenerLibros()
-        test.buscarUsuario("ALUM001")
+        test.buscarUsuario("ALU001")
     }
 
     fun iniciarSesion(v : View)
@@ -61,8 +61,10 @@ class Login : AppCompatActivity(), LoginContract {
         startActivity(intent)
     }
 
-    override fun redirigirInicio() {
-        val intent = Intent(this@Login, Main::class.java)
+    override fun redirigirInicio(idUsuario : String) {
+        val intent = Intent(this@Login, Main::class.java).apply {
+            putExtra("idUsuario", idUsuario)
+        }
         startActivity(intent)
         finish()
     }

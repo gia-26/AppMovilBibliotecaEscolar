@@ -39,6 +39,8 @@ class Main : AppCompatActivity() {
     private lateinit var tvVision : TextView
     private lateinit var tvObjetivo : TextView
 
+    private var idUsuario = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -52,6 +54,8 @@ class Main : AppCompatActivity() {
         btnInicio = findViewById(R.id.btnInicio)
         btnCatalogo = findViewById(R.id.btnCatalogo)
         btnPrestamos = findViewById(R.id.btnPrestamos)
+
+        idUsuario = intent.getStringExtra("idUsuario").toString()
 
         btnInicio.setOnClickListener(this::mostrarInicio)
         btnCatalogo.setOnClickListener(this::mostrarCatalogo)
@@ -186,7 +190,7 @@ class Main : AppCompatActivity() {
                 }
             }
         })
-        prestamosPresenter.recuperarPrestamos()
+        prestamosPresenter.recuperarPrestamos(idUsuario)
 
         contenedor.addView(catalogoView)
     }
