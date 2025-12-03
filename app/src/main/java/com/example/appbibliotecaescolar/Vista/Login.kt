@@ -43,9 +43,9 @@ class Login : AppCompatActivity(), LoginContract {
         btnAcceder.setOnClickListener(this::iniciarSesion)
 
         val test = Test
-        test.obtenerPrestamos()
+        test.obtenerPrestamos("ALU001")
         test.obtenerLibros()
-        test.buscarUsuario("ALUM001")
+        test.buscarUsuario("ALU001")
     }
 
     fun iniciarSesion(v : View)

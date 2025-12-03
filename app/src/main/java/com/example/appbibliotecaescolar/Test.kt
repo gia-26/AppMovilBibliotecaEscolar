@@ -39,8 +39,8 @@ object Test {
         })
     }
 
-    fun obtenerPrestamos() {
-        ApiService.obtenerPrestamos().enqueue(object : Callback<List<ClsPrestamos>> {
+    fun obtenerPrestamos(idUsuario : String) {
+        ApiService.obtenerPrestamos(idUsuario).enqueue(object : Callback<List<ClsPrestamos>> {
 
             override fun onResponse(
                 call: Call<List<ClsPrestamos>?>,
