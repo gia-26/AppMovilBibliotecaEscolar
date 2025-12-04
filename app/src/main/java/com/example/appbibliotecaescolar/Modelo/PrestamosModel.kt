@@ -32,7 +32,10 @@ class PrestamosModel {
                 if (response.isSuccessful)
                 {
                     response.body()?.let { prestamos ->
-                        callback(true, "Prestamos recuperados correctamente", prestamos)
+                        if (prestamos.isEmpty())
+                            callback(true, "El usuario aún no cuenta con ningún préstamo", prestamos)
+                        else
+                            callback(true, "Prestamos recuperados correctamente", prestamos)
                     }
                 }
                 else
