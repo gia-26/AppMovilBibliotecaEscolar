@@ -11,6 +11,7 @@ data class ClsLibros(
     val noEstante: String,
     val edicion: String,
     val sinopsis: String,
+    val sinopsisCompleta: String,
     val imagen: String,
     val estado : String
 )

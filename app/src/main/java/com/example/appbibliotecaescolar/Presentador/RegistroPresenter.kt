@@ -26,10 +26,10 @@ class RegistroPresenter (val vista : RegistroContract) {
         }
     }
 
-    fun registrar(idUsuario : String, password : String)
+    fun registrar(idUsuario : String, password : String, idTipoUsuario : String)
     {
         modelo.inicializarApiService()
-        modelo.registrarUsuario(idUsuario, password) { exito, mensaje ->
+        modelo.registrarUsuario(idUsuario, password, idTipoUsuario) { exito, mensaje ->
             if (exito){
                 vista.mostrarMensaje(mensaje)
                 vista.volverLogin()
