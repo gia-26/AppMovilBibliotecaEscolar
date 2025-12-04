@@ -62,7 +62,7 @@ class Registro : AppCompatActivity(), RegistroContract {
             if (pass == passConfir) {
                 val user = datosUsuario
                 if (user != null)
-                    registerPresent.registrar(user.idUsuario, pass)
+                    registerPresent.registrar(user.idUsuario, pass, user.idTipoUsuario)
                 else
                     mostrarMensaje("Escanea un código QR antes del registro")
             }

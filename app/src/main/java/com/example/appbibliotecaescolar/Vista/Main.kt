@@ -111,8 +111,11 @@ class Main : AppCompatActivity() {
         exoPlayer.setMediaItem(mediaItem)
 
         //Prepara y reproduce el video
-        exoPlayer.prepare()
-        exoPlayer.playWhenReady = true
+        if (!exoPlayer.isPlaying)
+        {
+            exoPlayer.prepare()
+            exoPlayer.playWhenReady = true
+        }
     }
 
     override fun onPause()
@@ -133,6 +136,7 @@ class Main : AppCompatActivity() {
     }
     fun mostrarCatalogo(v : View)
     {
+        exoPlayer.release()
         contenedor.removeAllViews()
 
         val catalogoView = layoutInflater.inflate(R.layout.activity_ver_catalogo, contenedor, false)
@@ -164,6 +168,7 @@ class Main : AppCompatActivity() {
     }
     fun mostrarPrestamos(v : View)
     {
+        exoPlayer.release()
         contenedor.removeAllViews()
         //val prestamosView = layoutInflater.inflate(R.layout.activity_ver_prestamos, contenedor, false)
 

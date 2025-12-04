@@ -56,7 +56,7 @@ class LibrosAdaptador (val contexto : Context, val listaLibros : List<ClsLibros>
             putExtra("lib_anioEdicion", libro.anioEdicion)
             putExtra("lib_noEstante", libro.noEstante)
             putExtra("lib_edicion", libro.edicion)
-            putExtra("lib_sinopsis", libro.sinopsis)
+            putExtra("lib_sinopsis", libro.sinopsisCompleta)
             putExtra("lib_estado", libro.estado)
             putExtra("lib_img", libro.imagen)
         }

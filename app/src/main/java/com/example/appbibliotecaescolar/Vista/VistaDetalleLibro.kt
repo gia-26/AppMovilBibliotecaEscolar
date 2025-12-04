@@ -1,5 +1,6 @@
 package com.example.appbibliotecaescolar.Vista
 
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Html
 import android.widget.Button
@@ -22,10 +23,11 @@ class VistaDetalleLibro : AppCompatActivity() {
     private lateinit var tvAnioEdiVD : TextView
     private lateinit var tvNoEstanteVD : TextView
     private lateinit var tvEdicionVD : TextView
-    private lateinit var tvSinopsis : TextView
+    private lateinit var tvSinopsisCompleta : TextView
     private lateinit var tvEstadoVD : TextView
     private lateinit var imgLibroVD : ImageView
     private lateinit var btnCerrar : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -44,7 +46,7 @@ class VistaDetalleLibro : AppCompatActivity() {
         tvAnioEdiVD = findViewById(R.id.tvAnioEdiVD)
         tvNoEstanteVD = findViewById(R.id.tvNoEstanteVD)
         tvEdicionVD = findViewById(R.id.tvEdicionVD)
-        tvSinopsis = findViewById(R.id.tvSinopsis)
+        tvSinopsisCompleta = findViewById(R.id.tvSinopsisCompleta)
         tvEstadoVD = findViewById(R.id.tvEstadoVD)
         imgLibroVD = findViewById(R.id.imgLibroVD)
         btnCerrar = findViewById(R.id.btnCerrar)
@@ -76,8 +78,14 @@ class VistaDetalleLibro : AppCompatActivity() {
         tvAnioEdiVD.text = Html.fromHtml("<b>Año de edición:</b> $libAnioEdicion", Html.FROM_HTML_MODE_LEGACY)
         tvNoEstanteVD.text = Html.fromHtml("<b>No. de estante:</b> $libNoEstante", Html.FROM_HTML_MODE_LEGACY)
         tvEdicionVD.text = Html.fromHtml("<b>Edición:</b> $libEdicion", Html.FROM_HTML_MODE_LEGACY)
-        tvSinopsis.text = Html.fromHtml("<b>Sinopsis:</b><br>$libSinopsis", Html.FROM_HTML_MODE_LEGACY)
+        tvSinopsisCompleta.text = libSinopsis
         tvEstadoVD.text = libEstado
+
+        if (libEstado == "Prestado") {
+            tvEstadoVD.setBackgroundColor(Color.parseColor("#FF9800"))
+        } else {
+            tvEstadoVD.setBackgroundColor(Color.parseColor("#4CAF50"))
+        }
 
         btnCerrar.setOnClickListener {
             finish()

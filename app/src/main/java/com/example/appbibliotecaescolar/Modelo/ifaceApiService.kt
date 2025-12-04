@@ -39,10 +39,11 @@ interface ifaceApiService {
     ): Call<List<ClsDatosRegistro>>
 
     @FormUrlEncoded
-    @POST("apiAcceso.php")
+    @POST("apiRegistro.php")
     fun registrarUsuario(
         @Field("action") action: String,
         @Field("idUsuario") idUsuario: String,
-        @Field("password") password: String
+        @Field("password") password: String,
+        @Field("idTipoUsuario") idTipoUsuario: String
     ): Call<List<ClsDatosRespuesta>>
 }

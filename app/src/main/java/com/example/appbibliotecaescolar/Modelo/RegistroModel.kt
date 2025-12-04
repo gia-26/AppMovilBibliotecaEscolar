@@ -1,5 +1,6 @@
 package com.example.appbibliotecaescolar.Modelo
 
+import android.util.Log
 import com.example.appbibliotecaescolar.Constants
 import com.example.appbibliotecaescolar.Modelo.DataClass.ClsDatosRegistro
 import com.example.appbibliotecaescolar.Modelo.DataClass.ClsDatosRespuesta
@@ -24,15 +25,15 @@ class RegistroModel {
         apiService = retrofit.create(ifaceApiService::class.java)
     }
 
-    fun registrarUsuario(idUsuario: String, password: String, callback: (Boolean, String) -> Unit) {
-        apiService.registrarUsuario(action = "registrar", idUsuario = idUsuario, password = password).enqueue(object :
+    fun registrarUsuario(idUsuario: String, password: String, idTipoUsuario: String, callback: (Boolean, String) -> Unit) {
+        apiService.registrarUsuario(action = "registrar", idUsuario = idUsuario, password = password, idTipoUsuario).enqueue(object :
             Callback<List<ClsDatosRespuesta>> {
             override fun onResponse(call: Call<List<ClsDatosRespuesta>>, response: Response<List<ClsDatosRespuesta>>)
             {
                 if (response.isSuccessful) {
                     response.body()?.let { datos ->
                         if (datos[0].Estado == "true") {
-                            callback(true, "Registro exitoso: " + datos[0].Salida)
+                            callback(true, datos[0].Salida)
                         } else {
                             callback(false, "Ocurrió un error en el registro: " + datos[0].Salida)
                         }
@@ -56,12 +57,19 @@ class RegistroModel {
                 if (response.isSuccessful) {
                     response.body()?.let { usuario ->
                         if (usuario.isNotEmpty()) {
-                            callback(true, "Datos recuperados correctamente", usuario)
-                        } else {
+                            if (!usuario.get(0).error.isEmpty()) {
+                                callback(false, usuario[0].error, emptyList())
+                            }
+                            else {
+                                callback(true, "Datos recuperados correctamente", usuario)
+                            }
+                        }
+                        else {
                             callback(false, "No se encontró el usuario", emptyList())
                         }
                     } ?: callback(false, "Respuesta vacía del servidor", emptyList())
-                } else {
+                }else {
+                    Log.d("Error", "Error: ${response.message()}")
                     callback(false, "Error: ${response.message()}", emptyList())
                 }
             }
