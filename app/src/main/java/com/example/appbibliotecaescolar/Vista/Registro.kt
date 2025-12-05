@@ -47,7 +47,7 @@ class Registro : AppCompatActivity(), RegistroContract {
         tvNombre = findViewById(R.id.tvNombre)
         tvApellidoP = findViewById(R.id.tvApellidoP)
         tvApellidoM = findViewById(R.id.tvApellidoM)
-        edtPass = findViewById(R.id.edtPass)
+        edtPass = findViewById(R.id.edtUsuario2)
         edtPassConfirm = findViewById(R.id.edtPassConfirm)
 
         btnQR.setOnClickListener(this::solicitarPermisoCamara)
