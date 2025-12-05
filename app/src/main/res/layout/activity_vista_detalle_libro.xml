@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6D7C8"
+    android:textAlignment="center"
+    tools:context=".Vista.VistaDetalleLibro">
+
+    <ImageView
+        android:id="@+id/imgLibroVD"
+        android:layout_width="167dp"
+        android:layout_height="276dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloLibroVD"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvTituloLibroVD"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="29dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#381D1D"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvisbnVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvAutorVD" />
+
+    <TextView
+        android:id="@+id/tvEdicionVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvNoEstanteVD" />
+
+    <TextView
+        android:id="@+id/tvNoEstanteVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvAnioEdiVD" />
+
+    <TextView
+        android:id="@+id/tvAnioEdiVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditorialVD" />
+
+    <TextView
+        android:id="@+id/tvEditorialVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvGeneroVD" />
+
+    <TextView
+        android:id="@+id/tvAutorVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloLibroVD" />
+
+    <TextView
+        android:id="@+id/tvGeneroVD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="TextView"
+        android:textColor="#381D1D"
+        app:layout_constraintStart_toEndOf="@+id/imgLibroVD"
+        app:layout_constraintTop_toBottomOf="@+id/tvisbnVD" />
+
+    <Button
+        android:id="@+id/btnCerrar"
+        android:layout_width="61dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#381D1D"
+        android:textSize="24sp"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconGravity="textTop"
+        app:iconSize="25dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="381dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="-60dp"
+        app:cardBackgroundColor="#3B2423"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLibroVD">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSinopsis"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:text="Sinopsis"
+                android:textColor="#E6D7C8"
+                android:textSize="24sp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvSinopsisCompleta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#E6D7C8"
+                    android:textSize="16sp" />
+            </ScrollView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="360dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="1dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintVertical_bias="0.058">
+
+        <TextView
+            android:id="@+id/tvEstadoVD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="TextView"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

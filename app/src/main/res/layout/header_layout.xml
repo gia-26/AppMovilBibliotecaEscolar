@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#3B2423"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título -->
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Biblioteca UTHH"
+        android:textColor="#E6D7C8"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="412dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo">
+
+        <!-- Botón INICIO -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:text="Inicio"
+            android:textColor="#E6D7C8"
+            android:textSize="12sp"
+            app:icon="@drawable/home"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="#E6D7C8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnCatalogo"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Botón CATÁLOGO -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCatalogo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:text="Ver catálogo"
+            android:textColor="#E6D7C8"
+            android:textSize="12sp"
+            app:icon="@drawable/menu_book"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="#E6D7C8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnPrestamos"
+            app:layout_constraintStart_toEndOf="@id/btnInicio"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Botón PRÉSTAMOS -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPrestamos"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:text="Ver préstamos"
+            android:textColor="#E6D7C8"
+            android:textSize="12sp"
+            app:icon="@drawable/bookmark"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="#E6D7C8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnCatalogo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
