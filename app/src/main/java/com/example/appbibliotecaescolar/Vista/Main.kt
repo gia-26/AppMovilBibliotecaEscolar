@@ -104,7 +104,7 @@ class Main : AppCompatActivity() {
         playerView.useController = true
 
         //Construye la URI del video
-        val videoUri = ("android.resource://" + packageName + "/" + R.raw.video_bioetica).toUri()
+        val videoUri = ("https://giovanni.grupoctic.com/bibliotecamovil/video/video_biblioteca.mp4").toUri()
         val mediaItem = MediaItem.fromUri(videoUri)
 
         //Configura el video en el reproductor
@@ -170,7 +170,6 @@ class Main : AppCompatActivity() {
     {
         exoPlayer.release()
         contenedor.removeAllViews()
-        //val prestamosView = layoutInflater.inflate(R.layout.activity_ver_prestamos, contenedor, false)
 
         val catalogoView = layoutInflater.inflate(R.layout.activity_ver_catalogo, contenedor, false)
 

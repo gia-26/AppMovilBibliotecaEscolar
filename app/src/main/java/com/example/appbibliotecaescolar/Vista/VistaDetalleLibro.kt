@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
@@ -82,7 +83,7 @@ class VistaDetalleLibro : AppCompatActivity() {
         tvEstadoVD.text = libEstado
 
         if (libEstado == "Prestado") {
-            tvEstadoVD.setBackgroundColor(Color.parseColor("#FF9800"))
+            tvEstadoVD.setBackgroundColor(Color.parseColor("#E88E07"))
         } else {
             tvEstadoVD.setBackgroundColor(Color.parseColor("#4CAF50"))
         }

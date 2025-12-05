@@ -29,50 +29,62 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/tvTituloLibro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Titulo del libro"
-                android:textColor="#3B2423"
-                android:textSize="16sp"
-                android:textStyle="bold"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contenedorTexto"
+                android:layout_width="204dp"
+                android:layout_height="187dp"
+                android:layout_marginEnd="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.107"
                 app:layout_constraintStart_toEndOf="@+id/imgLibro"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.109" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/tvSinopsis"
-                android:layout_width="187dp"
-                android:layout_height="122dp"
-                android:layout_marginTop="12dp"
-                android:text="Sinopsis"
-                android:textColor="#3B2423"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.267"
-                app:layout_constraintStart_toEndOf="@+id/imgLibro"
-                app:layout_constraintTop_toBottomOf="@+id/tvAutor"
-                app:layout_constraintVertical_bias="0.0" />
+                <TextView
+                    android:id="@+id/tvTituloLibro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8sp"
+                    android:maxLines="2"
+                    android:text="Titulo del libro"
+                    android:textColor="#3B2423"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvAutor"
-                android:layout_width="184dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="16dp"
-                android:text="Autor"
-                android:textColor="#838383"
-                android:textStyle="italic"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.254"
-                app:layout_constraintStart_toEndOf="@+id/imgLibro"
-                app:layout_constraintTop_toBottomOf="@+id/tvTituloLibro"
-                app:layout_constraintVertical_bias="0.0" />
+                <TextView
+                    android:id="@+id/tvAutor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="8sp"
+                    android:maxLines="1"
+                    android:text="Autor"
+                    android:textColor="#838383"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTituloLibro" />
+
+                <TextView
+                    android:id="@+id/tvSinopsis"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="5"
+                    android:text="Sinopsis"
+                    android:textColor="#3B2423"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAutor"
+                    android:lineSpacingExtra="8sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
