@@ -25,11 +25,12 @@
 
             <TextView
                 android:id="@+id/txtTituloLogin"
-                android:layout_width="203dp"
-                android:layout_height="45dp"
+                android:layout_width="312dp"
+                android:layout_height="44dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto"
                 android:text="Iniciar sesión"
+                android:textAlignment="center"
                 android:textColor="#E6D7C8"
                 android:textSize="34sp"
                 android:textStyle="bold"
