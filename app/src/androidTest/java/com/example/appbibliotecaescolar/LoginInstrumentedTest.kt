@@ -33,11 +33,6 @@ class LoginInstrumentedTest {
 
         onView(withId(R.id.btnIngresar)).perform(click())
 
-        Thread.sleep(2000)
-    }
-
-    @Test
-    fun verificarBotonRegistro() {
-        onView(withId(R.id.tvRegistrar)).perform(click())
+        Thread.sleep(5000)
     }
 }

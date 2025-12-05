@@ -33,7 +33,7 @@ class Login : AppCompatActivity(), LoginContract {
             insets
         }
         edtEmail = findViewById(R.id.edtUsuario)
-        edtPass = findViewById(R.id.edtPassword)
+        edtPass = findViewById(R.id.edtPass)
         btnAcceder = findViewById(R.id.btnIngresar)
         tvRegistrar = findViewById(R.id.tvRegistrar)
 
