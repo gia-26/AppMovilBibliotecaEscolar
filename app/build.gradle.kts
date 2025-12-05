@@ -56,4 +56,10 @@ dependencies {
     implementation("com.google.android.exoplayer:exoplayer:2.19.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+
+    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0")
+
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.11.0")
+    implementation("com.google.android.material:material:1.11.0")
 }

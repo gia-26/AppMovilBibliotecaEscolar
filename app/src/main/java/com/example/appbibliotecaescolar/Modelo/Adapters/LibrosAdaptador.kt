@@ -32,7 +32,7 @@ class LibrosAdaptador (val contexto : Context, val listaLibros : List<ClsLibros>
         val libro = listaLibros[position]
         holder.tvTituloLibro.text = libro.titulo
         holder.tvAutor.text = "Autor: " + libro.autor
-        holder.tvSinopsis.text = Html.fromHtml("Sinopsis: <br>${libro.sinopsis}", Html.FROM_HTML_MODE_LEGACY)
+        holder.tvSinopsis.text = Html.fromHtml("<b>Sinopsis:</b> <br>${libro.sinopsis}", Html.FROM_HTML_MODE_LEGACY)
 
         //Cargar la imagen usando Glide
         Glide.with(contexto)
