@@ -20,7 +20,6 @@ class LoginModel {
 
         apiService = retrofit.create(ifaceApiService::class.java)
     }
-
     fun acceder(email: String, password: String, callback: (Boolean, String, String) -> Unit) {
         apiService.iniciarSesion(action = "login", email = email, password = password)
             .enqueue(object : Callback<List<ClsDatosRespuesta>> {
